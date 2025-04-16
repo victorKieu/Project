@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Sử dụng layout chính
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Dashboard</h1>
+
+    <div class="row">
+        <!-- Card 1: Total Users -->
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Tổng Người Dùng</h5>
+                    <p class="card-text display-4">@ViewData["TotalUsers"]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Total Projects -->
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Dự Án Đang Thực Hiện</h5>
+                    <p class="card-text display-4">@ViewData["Projects"]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Revenue -->
+        <div class="col-md-4">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Doanh Thu</h5>
+                    <p class="card-text display-4">$@ViewData["Revenue"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Thống Kê Doanh Thu</h5>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Danh Sách Dự Án</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên Dự Án</th>
+                                <th>Khách Hàng</th>
+                                <th>Trạng Thái</th>
+                                <th>Ngày Bắt Đầu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Dự Án A</td>
+                                <td>Khách Hàng 1</td>
+                                <td>Đang Thực Hiện</td>
+                                <td>01/01/2025</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Dự Án B</td>
+                                <td>Khách Hàng 2</td>
+                                <td>Hoàn Thành</td>
+                                <td>15/02/2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

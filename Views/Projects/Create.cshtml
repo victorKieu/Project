@@ -1,0 +1,23 @@
+﻿@model KieuGiaConstruction.Models.Project
+
+<h2>Thêm Dự Án Mới</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Tên Dự Án:</label>
+        <input type="text" asp-for="ProjectName" required />
+    </div>
+    <div>
+        <label>Ngày Bắt Đầu:</label>
+        <input type="date" asp-for="StartDate" required />
+    </div>
+    <div>
+        <label>Ngày Kết Thúc:</label>
+        <input type="date" asp-for="EndDate" required />
+    </div>
+    <div>
+        <label>Trạng Thái:</label>
+        <input type="text" asp-for="iStatus" required />
+    </div>
+    <button type="submit">Lưu</button>
+</form>

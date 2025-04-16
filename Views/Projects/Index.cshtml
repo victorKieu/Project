@@ -1,0 +1,44 @@
+﻿@model IEnumerable<KieuGiaConstruction.Models.Project>
+
+<h2>Danh sách Dự án</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên Dự án</th>
+            <th>Ngày bắt đầu</th>
+            <th>Ngày kết thúc</th>
+            <th>Trạng thái</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Id</td>
+                <td>@project.ProjectName</td>
+                <td>@project.StartDate.ToShortDateString()</td>
+                <td>@project.EndDate.ToShortDateString()</td>
+                <td>@project.iStatus</td>
+            </tr>
+        }
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Id</td>
+                <td>@project.ProjectName</td>
+                <td>@project.StartDate.ToShortDateString()</td>
+                <td>@project.EndDate.ToShortDateString()</td>
+                <td>@project.iStatus</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@project.Id">Sửa</a>
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@project.Id" />
+                        <button type="submit">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
